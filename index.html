@@ -440,12 +440,11 @@ border-bottom: 1px solid rgba(244, 239, 228, 0.14);
 .proof-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
 .proof-item {
 aspect-ratio: 3/4; background: #0D0C0A; border: 1px solid rgba(244, 239, 228, 0.14);
-display: flex; align-items: center; justify-content: center; text-align: center;
-padding: 14px; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
-color: #7A7360; position: relative; overflow: hidden;
+display: block; position: relative; overflow: hidden; cursor: pointer;
+transition: border-color 0.3s ease, transform 0.3s ease;
 }
-.proof-item img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-.proof-item span { position: relative; z-index: 1; }
+.proof-item:hover { border-color: #6B7A3A; transform: translateY(-3px); }
+.proof-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .quote-block { margin-top: 36px; padding: 26px 28px; background: #0D0C0A; border-left: 2px solid #6B7A3A; }
 .quote-block p { font-family: ‘Cormorant Garamond’, serif; font-style: italic; font-size: 1.15rem; color: #F4EFE4; margin-bottom: 8px; }
@@ -565,7 +564,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
         <div class="about-copy">
           <p>I've been obsessed with social media and writing for as long as I can remember. Over 8 years of writing and 6+ years of social media work later, that obsession has turned into a career built around one core skill: understanding people.</p>
           <p>Not audiences. People. What makes someone stop scrolling. What makes them comment instead of just liking. What makes them stick around for months, or leave after one bad post. I've spent years studying the psychology of how people behave online, and I use that constantly, in every brand I work with.</p>
-          <p>That's how a personal account with 657 followers grew into a 35,000+ follower thought leadership platform. It's how a Facebook community of 27,000 became a half-million-member cultural brand. It's how another community added 125,000 members in six months while quietly building a business inside it.</p>
+          <p>That's how a personal account with 657 followers grew into a 40,000+ follower thought leadership platform. It's how a Facebook community of 27,000 became a half-million-member cultural brand. It's how another community added over 145,000 members in a single year while quietly building a business inside it.</p>
           <p>None of that came from luck or ad spend. It came from knowing what people want before they know they want it, and giving it to them consistently.</p>
           <p>I work across four things that most people separate but I treat as one job: strategy, creative direction, writing, and social media management. Strategy gives a brand its direction. Creative direction gives it a voice and a look. Writing gives it words people actually want to read. Social media management is where all of that gets tested in public, every single day, and refined based on what real people do.</p>
           <p>I'm Stephen Joel. I build brands that people remember.</p>
@@ -613,14 +612,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
       <button class="cs-card-btn" aria-expanded="false" onclick="toggleCase('cs1', this)">
         <span class="cs-card-tag">Personal Brand · X</span>
         <span class="cs-card-name">Tolulope Michael</span>
-        <span class="cs-card-stat">657 → 35K+ Followers</span>
+        <span class="cs-card-stat">657 → 40K+ Followers</span>
         <span class="cs-card-plus">+</span>
       </button>
       <div class="cs-detail-panel" id="cs-panel-cs1">
         <div class="cs-detail-inner">
           <p class="cs-subtitle">Building a cybersecurity thought leader from scratch. No ads, no shortcuts, just consistent, psychologically-informed storytelling.</p>
           <div class="cs-stats-row">
-            <div class="cs-stat"><span class="num">657 → 35K+</span><span class="lbl">Followers in 19 Months</span></div>
+            <div class="cs-stat"><span class="num">657 → 40K+</span><span class="lbl">Followers in 2 Years</span></div>
             <div class="cs-stat"><span class="num">200 → 38M+</span><span class="lbl">Monthly Impressions</span></div>
             <div class="cs-stat"><span class="num">20x</span><span class="lbl">Growth in Post Engagement</span></div>
           </div>
@@ -638,22 +637,22 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
             </div>
             <div class="cs-col">
               <h4>The Result</h4>
-              <p>Follower growth from 657 to 35,000+ across 19 months, with monthly impressions climbing from roughly 200 to over 38 million. Average post engagement grew more than 20x, alongside multiple viral, standout posts.</p>
+              <p>Follower growth from 657 to 40,000+ across 2 years, with monthly impressions climbing from roughly 200 to over 38 million. Average post engagement grew more than 20x, alongside multiple viral, standout posts.</p>
               <h4>Why It Worked</h4>
               <p>Every platform has its own voice. Mastering X's meant treating growth as a daily discipline: test, learn, adjust. A December 2024 giveaway accelerated momentum (18K to 24.3K), but the majority of growth was purely organic, compounding month over month.</p>
             </div>
           </div>
           <div class="proof-gallery">
-            <h4>Proof of Work</h4>
+            <h4>Proof of Work <span style="color:#7A7360; text-transform:none; letter-spacing:0; font-weight:400;">(tap any image to view full size)</span></h4>
             <div class="proof-grid">
-              <div class="proof-item"><img src="https://i.imgur.com/FKxWU3F_d.webp?maxwidth=760&fidelity=grand" onerror="this.style.display='none';" alt=""><span>Viral Post<br>398K Views</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/yIaIb1s.jpeg" onerror="this.style.display='none';" alt=""><span>Viral Post<br>518K Views</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/MzqtMBh.jpeg" onerror="this.style.display='none';" alt=""><span>Viral Post<br>1.3M Views</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/EOmsSak.jpeg" onerror="this.style.display='none';" alt=""><span>Viral Post<br>311K Views</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/m3LIRM4.jpeg" onerror="this.style.display='none';" alt=""><span>Viral Post<br>1M Views</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/pDYJxtU.jpeg" onerror="this.style.display='none';" alt=""><span>Analytics<br>Dashboard</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/2KdHcL2.jpeg" onerror="this.style.display='none';" alt=""><span>Analytics<br>Dashboard</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/zK6xhmx.jpeg" onerror="this.style.display='none';" alt=""><span>Analytics<br>Dashboard</span></div>
+              <a class="proof-item" href="https://i.imgur.com/FKxWU3F_d.webp?maxwidth=760&fidelity=grand" target="_blank" rel="noopener"><img src="https://i.imgur.com/FKxWU3F_d.webp?maxwidth=760&fidelity=grand" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/yIaIb1s.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/yIaIb1s.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/MzqtMBh.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/MzqtMBh.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/EOmsSak.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/EOmsSak.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/m3LIRM4.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/m3LIRM4.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/pDYJxtU.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/pDYJxtU.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/2KdHcL2.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/2KdHcL2.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/zK6xhmx.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/zK6xhmx.jpeg" onerror="this.style.display='none';" alt=""></a>
             </div>
           </div>
         </div>
@@ -704,14 +703,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
       <button class="cs-card-btn" aria-expanded="false" onclick="toggleCase('cs3', this)">
         <span class="cs-card-tag">Community + Commerce</span>
         <span class="cs-card-name">Happivibes</span>
-        <span class="cs-card-stat">153K → 278K Members</span>
+        <span class="cs-card-stat">153K → 300K+ Members</span>
         <span class="cs-card-plus">+</span>
       </button>
       <div class="cs-detail-panel" id="cs-panel-cs3">
         <div class="cs-detail-inner">
           <p class="cs-subtitle">Turning brand promotion into entertainment: advertising a calling service through stories people wanted to read, not skip.</p>
           <div class="cs-stats-row">
-            <div class="cs-stat"><span class="num">153K → 278K</span><span class="lbl">Members in 6 Months</span></div>
+            <div class="cs-stat"><span class="num">153K → 300K+</span><span class="lbl">Members in 1 Year</span></div>
             <div class="cs-stat"><span class="num">300 → 5K+</span><span class="lbl">Reactions per Post</span></div>
             <div class="cs-stat"><span class="num">2.8K+</span><span class="lbl">Reactions on a Single Ad Story</span></div>
           </div>
@@ -729,7 +728,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
             </div>
             <div class="cs-col">
               <h4>The Result</h4>
-              <p>Membership grew from 153,000 to 278,000 in just six months. Engagement grew from roughly 300 to 5,000+ interactions per post, with consistent buzz translating into real patronage of Happivibes' services.</p>
+              <p>Membership grew from 153,000 to over 300,000 in just one year. Engagement grew from roughly 300 to 5,000+ interactions per post, with consistent buzz translating into real patronage of Happivibes' services.</p>
               <h4>Why It Worked</h4>
               <p>The clearest proof is in how people reacted. Many didn't realize a story was an advert until the very end. That's the entire craft: promotion that reads as entertainment first.</p>
             </div>
@@ -739,11 +738,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
             <cite>Debbie Gashion Manasseh, Facebook Comment</cite>
           </div>
           <div class="proof-gallery">
-            <h4>Real Audience Reactions</h4>
+            <h4>Real Audience Reactions <span style="color:#7A7360; text-transform:none; letter-spacing:0; font-weight:400;">(tap any image to view full size)</span></h4>
             <div class="proof-grid">
-              <div class="proof-item"><img src="https://i.imgur.com/uH3f4Fb.jpeg" onerror="this.style.display='none';" alt=""><span>Original<br>Ad Story</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/RYAHKLp.jpeg" onerror="this.style.display='none';" alt=""><span>Audience<br>Reaction</span></div>
-              <div class="proof-item"><img src="https://i.imgur.com/QOGHJWb.jpeg" onerror="this.style.display='none';" alt=""><span>Audience<br>Reaction</span></div>
+              <a class="proof-item" href="https://i.imgur.com/uH3f4Fb.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/uH3f4Fb.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/RYAHKLp.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/RYAHKLp.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <a class="proof-item" href="https://i.imgur.com/QOGHJWb.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/QOGHJWb.jpeg" onerror="this.style.display='none';" alt=""></a>
             </div>
           </div>
         </div>
@@ -782,9 +781,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
       </div>
       <a href="mailto:Stephenjoel213@gmail.com" class="btn">Stephenjoel213@gmail.com</a>
       <div class="contact-links">
-        <a class="contact-link" href="https://www.linkedin.com/in/stephen-joel-2155a2277" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="contact-link" href="https://x.com/_stephenifeanyi" target="_blank" rel="noopener">X / Twitter</a>
-        <a class="contact-link" href="https://www.facebook.com/share/1HmYhWbJJo/" target="_blank" rel="noopener">Facebook</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/stephen-joel-2155a2277" onclick="return tryApp(event, 'linkedin://in/stephen-joel-2155a2277', 'https://www.linkedin.com/in/stephen-joel-2155a2277')">LinkedIn</a>
+        <a class="contact-link" href="https://x.com/_stephenifeanyi" onclick="return tryApp(event, 'twitter://user?screen_name=_stephenifeanyi', 'https://x.com/_stephenifeanyi')">X / Twitter</a>
+        <a class="contact-link" href="https://www.facebook.com/share/1HmYhWbJJo/" onclick="return tryApp(event, 'fb://facewebmodal/f?href=https://www.facebook.com/share/1HmYhWbJJo/', 'https://www.facebook.com/share/1HmYhWbJJo/')">Facebook</a>
         <a class="contact-link" href="https://wa.me/2349076490564" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <button class="panel-close" onclick="closePanel('contact')">✕ Close</button>
@@ -830,6 +829,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
       panel.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
     }
+  }
+
+  function tryApp(event, appUrl, webUrl) {
+    event.preventDefault();
+    const fallbackTimer = setTimeout(function() {
+      window.open(webUrl, '_blank');
+    }, 800);
+    window.addEventListener('blur', function onBlur() {
+      clearTimeout(fallbackTimer);
+      window.removeEventListener('blur', onBlur);
+    });
+    window.location.href = appUrl;
+    return false;
   }
 </script>
 
