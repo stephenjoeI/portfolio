@@ -482,6 +482,44 @@ font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #7A
 @media (max-width: 600px) { footer { flex-direction: column; gap: 12px; text-align: center; } }
 
 a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offset: 3px; }
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(13, 12, 10, 0.95);
+z-index: 1000;
+align-items: center;
+justify-content: center;
+padding: 30px;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+max-width: 100%;
+max-height: 100%;
+object-fit: contain;
+border: 1px solid rgba(244, 239, 228, 0.14);
+}
+.lightbox-close {
+position: absolute;
+top: 24px;
+right: 24px;
+background: rgba(23, 21, 15, 0.9);
+border: 1px solid rgba(244, 239, 228, 0.2);
+color: #F4EFE4;
+width: 44px;
+height: 44px;
+border-radius: 50%;
+font-size: 1.1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+z-index: 1001;
+transition: border-color 0.3s ease, color 0.3s ease;
+}
+.lightbox-close:hover { border-color: #6B7A3A; color: #8FA84E; }
 </style>
 
 </head>
@@ -645,14 +683,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
           <div class="proof-gallery">
             <h4>Proof of Work <span style="color:#7A7360; text-transform:none; letter-spacing:0; font-weight:400;">(tap any image to view full size)</span></h4>
             <div class="proof-grid">
-              <a class="proof-item" href="https://i.imgur.com/FKxWU3F_d.webp?maxwidth=760&fidelity=grand" target="_blank" rel="noopener"><img src="https://i.imgur.com/FKxWU3F_d.webp?maxwidth=760&fidelity=grand" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/yIaIb1s.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/yIaIb1s.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/MzqtMBh.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/MzqtMBh.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/EOmsSak.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/EOmsSak.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/m3LIRM4.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/m3LIRM4.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/pDYJxtU.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/pDYJxtU.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/2KdHcL2.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/2KdHcL2.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/zK6xhmx.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/zK6xhmx.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/FKxWU3F_d.webp?maxwidth=760&fidelity=grand')" type="button"><img src="https://i.imgur.com/FKxWU3F_d.webp?maxwidth=760&fidelity=grand" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/yIaIb1s.jpeg')" type="button"><img src="https://i.imgur.com/yIaIb1s.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/MzqtMBh.jpeg')" type="button"><img src="https://i.imgur.com/MzqtMBh.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/EOmsSak.jpeg')" type="button"><img src="https://i.imgur.com/EOmsSak.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/m3LIRM4.jpeg')" type="button"><img src="https://i.imgur.com/m3LIRM4.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/pDYJxtU.jpeg')" type="button"><img src="https://i.imgur.com/pDYJxtU.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/2KdHcL2.jpeg')" type="button"><img src="https://i.imgur.com/2KdHcL2.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/zK6xhmx.jpeg')" type="button"><img src="https://i.imgur.com/zK6xhmx.jpeg" onerror="this.style.display='none';" alt=""></button>
             </div>
           </div>
         </div>
@@ -740,9 +778,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
           <div class="proof-gallery">
             <h4>Real Audience Reactions <span style="color:#7A7360; text-transform:none; letter-spacing:0; font-weight:400;">(tap any image to view full size)</span></h4>
             <div class="proof-grid">
-              <a class="proof-item" href="https://i.imgur.com/uH3f4Fb.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/uH3f4Fb.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/RYAHKLp.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/RYAHKLp.jpeg" onerror="this.style.display='none';" alt=""></a>
-              <a class="proof-item" href="https://i.imgur.com/QOGHJWb.jpeg" target="_blank" rel="noopener"><img src="https://i.imgur.com/QOGHJWb.jpeg" onerror="this.style.display='none';" alt=""></a>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/uH3f4Fb.jpeg')" type="button"><img src="https://i.imgur.com/uH3f4Fb.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/RYAHKLp.jpeg')" type="button"><img src="https://i.imgur.com/RYAHKLp.jpeg" onerror="this.style.display='none';" alt=""></button>
+              <button class="proof-item" onclick="openLightbox('https://i.imgur.com/QOGHJWb.jpeg')" type="button"><img src="https://i.imgur.com/QOGHJWb.jpeg" onerror="this.style.display='none';" alt=""></button>
             </div>
           </div>
         </div>
@@ -843,7 +881,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offs
     window.location.href = appUrl;
     return false;
   }
+
+  function openLightbox(url) {
+    document.getElementById('lightbox-img').src = url;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(event) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+  }
 </script>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)" type="button">✕</button>
+  <img id="lightbox-img" src="" alt="Full size proof image">
+</div>
 
 </body>
 </html>
