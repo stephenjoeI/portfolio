@@ -476,10 +476,13 @@ transition: all 0.3s ease;
 
 footer {
 border-top: 1px solid rgba(244, 239, 228, 0.14); padding: 36px 32px;
-display: flex; justify-content: space-between; align-items: center;
+display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
 font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #7A7360;
 }
-@media (max-width: 600px) { footer { flex-direction: column; gap: 12px; text-align: center; } }
+.footer-contact { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-contact a { color: #C9C3B4; text-decoration: none; transition: color 0.3s ease; }
+.footer-contact a:hover { color: #8FA84E; }
+@media (max-width: 600px) { footer { flex-direction: column; gap: 14px; text-align: center; } .footer-contact { justify-content: center; } }
 
 a:focus-visible, button:focus-visible { outline: 2px solid #8FA84E; outline-offset: 3px; }
 
@@ -830,8 +833,12 @@ transition: border-color 0.3s ease, color 0.3s ease;
 </section>
 
 <footer>
-  <div>© 2026 Stephen Joel</div>
-  <div>Brand & Creative Strategist · Lagos, Nigeria</div>
+  <div>© 2026 Stephen Joel<br>Brand & Creative Strategist · Lagos, Nigeria</div>
+  <div class="footer-contact">
+    <a href="mailto:Stephenjoel213@gmail.com">Stephenjoel213@gmail.com</a>
+    <a href="https://www.linkedin.com/in/stephen-joel-2155a2277" onclick="return tryApp(event, 'linkedin://in/stephen-joel-2155a2277', 'https://www.linkedin.com/in/stephen-joel-2155a2277')">LinkedIn</a>
+    <a href="https://wa.me/2349076490564" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 </footer>
 
 <script>
