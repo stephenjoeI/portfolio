@@ -475,6 +475,20 @@ transition: border-color 0.3s ease, transform 0.3s ease;
 
 /* ===== CONTACT PANEL ===== */
 .contact-links { display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 14px; margin-top: 40px; }
+
+/* ===== CONTACT FORM ===== */
+.contact-form-wrap { margin-top: 70px; max-width: 560px; }
+.contact-form-sub { font-size: 0.92rem; color: #C9C3B4; margin-bottom: 24px; }
+#whatsapp-form { display: flex; flex-direction: column; gap: 14px; }
+#whatsapp-form input, #whatsapp-form textarea {
+background: #17150F; border: 1px solid rgba(244, 239, 228, 0.2); color: #F4EFE4;
+padding: 14px 16px; font-family: ‘Inter’, sans-serif; font-size: 0.95rem; font-weight: 300;
+border-radius: 0; resize: vertical;
+}
+#whatsapp-form input::placeholder, #whatsapp-form textarea::placeholder { color: #7A7360; }
+#whatsapp-form input:focus, #whatsapp-form textarea:focus { outline: none; border-color: #6B7A3A; }
+#whatsapp-form button { align-self: flex-start; margin-top: 6px; }
+
 .contact-link {
 padding: 14px 26px; border: 1px solid rgba(244, 239, 228, 0.14); color: #C9C3B4; text-decoration: none;
 font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease;
@@ -862,8 +876,23 @@ transition: border-color 0.3s ease, color 0.3s ease;
         <a class="contact-link" href="https://www.facebook.com/share/1HmYhWbJJo/" onclick="return tryApp(event, 'fb://facewebmodal/f?href=https://www.facebook.com/share/1HmYhWbJJo/', 'https://www.facebook.com/share/1HmYhWbJJo/')">Facebook</a>
         <a class="contact-link" href="https://wa.me/2349076490564" target="_blank" rel="noopener">WhatsApp</a>
       </div>
-      <button class="panel-close" onclick="closePanel('contact')">✕ Close</button>
-    </div>
+
+```
+  <div class="contact-form-wrap">
+    <span class="eyebrow" style="display:block; margin-bottom:10px;">Not Ready to Call? Send a Quick Message</span>
+    <p class="contact-form-sub">Fill this in and it opens straight into WhatsApp, pre-written, ready to send.</p>
+    <form id="whatsapp-form" onsubmit="return sendToWhatsApp(event)">
+      <input type="text" id="cf-name" placeholder="Your name" required>
+      <input type="text" id="cf-contact" placeholder="Email or phone number" required>
+      <textarea id="cf-message" rows="4" placeholder="Tell me a bit about your brand and what you need"></textarea>
+      <button type="submit" class="btn">Send via WhatsApp →</button>
+    </form>
+  </div>
+
+  <button class="panel-close" onclick="closePanel('contact')">✕ Close</button>
+</div>
+```
+
   </div>
 </section>
 
@@ -935,6 +964,25 @@ transition: border-color 0.3s ease, color 0.3s ease;
     document.getElementById('lightbox').classList.remove('open');
     document.getElementById('lightbox-img').src = '';
     document.body.style.overflow = '';
+  }
+
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+    const name = document.getElementById('cf-name').value.trim();
+    const contact = document.getElementById('cf-contact').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+
+    let text = "Hi Stephen, I'm " + name + " (" + contact + ").";
+    if (message) {
+      text += " " + message;
+    } else {
+      text += " I'd like to talk about a project.";
+    }
+
+    const encoded = encodeURIComponent(text);
+    const waUrl = "https://wa.me/2349076490564?text=" + encoded;
+    window.open(waUrl, '_blank');
+    return false;
   }
 </script>
 
